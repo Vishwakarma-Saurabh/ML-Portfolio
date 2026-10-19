@@ -1,0 +1,10 @@
+__pycache__/
+../vscode
+*.pyc
+.ipynb_checkpoints/
+.env
+.venv
+data/*.csv
+..data 
+reports/figures/*   
+models/*.joblib
