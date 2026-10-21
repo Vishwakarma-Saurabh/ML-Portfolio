@@ -17,8 +17,7 @@ def build_preprocessor(present_cols: list[str]):
 
     numeric_pipe = Pipeline([("scaler", StandardScaler())])
     binary_pipe  = Pipeline([("ohe", OneHotEncoder(drop="if_binary", handle_unknown="ignore"))])
-    ordinal_pipe = Pipeline([("ord", OrdinalEncoder(
-        categories=FURNISHING_ORDER, handle_unknown="use_encoded_value", unknown_value=-1))])
+    ordinal_pipe = Pipeline([("ord", OrdinalEncoder(categories=FURNISHING_ORDER, handle_unknown="use_encoded_value", unknown_value=-1))])
 
     return ColumnTransformer(
         transformers=[
