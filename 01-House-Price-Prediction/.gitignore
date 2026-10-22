@@ -8,3 +8,4 @@ data/*.csv
 ..data 
 reports/figures/*   
 models/*.joblib
+reports/final_cv_report.txt

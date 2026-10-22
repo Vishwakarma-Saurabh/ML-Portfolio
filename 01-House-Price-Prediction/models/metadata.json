@@ -1,0 +1,55 @@
+{
+  "target": "price (INR)",
+  "metrics_cv": {
+    "MAE": 772935.3608516627,
+    "RMSE": 1097321.0606323679,
+    "R2": 0.6551917508055125
+  },
+  "features_input": {
+    "numeric": [
+      "area",
+      "bedrooms",
+      "bathrooms",
+      "stories",
+      "parking",
+      "total_rooms",
+      "area_per_room",
+      "amenities",
+      "area_x_prefarea",
+      "bathrooms_per_bedroom"
+    ],
+    "binary": [
+      "mainroad",
+      "guestroom",
+      "basement",
+      "hotwaterheating",
+      "airconditioning",
+      "prefarea"
+    ],
+    "categorical": [
+      "furnishingstatus"
+    ]
+  },
+  "engineered_features": [
+    "F1_total_rooms",
+    "F2_area_per_room",
+    "F3_amenities",
+    "F4_area_x_prefarea",
+    "F5_bath_per_bedroom"
+  ],
+  "raw_input_schema": {
+    "area": "float (>0)",
+    "bedrooms": "int (>0)",
+    "bathrooms": "int (>0)",
+    "stories": "int (>0)",
+    "mainroad": "yes|no",
+    "guestroom": "yes|no",
+    "basement": "yes|no",
+    "hotwaterheating": "yes|no",
+    "airconditioning": "yes|no",
+    "parking": "int (>=0)",
+    "prefarea": "yes|no",
+    "furnishingstatus": "unfurnished|semi-furnished|furnished"
+  },
+  "notes": "Predictions are log1p-trained / expm1-inverted; on average they under-predict mean by ~2.15% due to Jensen bias. Apply the smearing factor 1.0215 when calibrated means matter; NOT when MAE is the reporting metric."
+}
